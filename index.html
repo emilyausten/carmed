@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OficiaI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="carrinho.scss">
+    <link rel="shortcut icon" href="img/logo.avif" type="image/x-icon">
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <button class="menu-btn"><i class="fas fa-bars"></i></button>
+           <div class="center-a"><a href="index.html"><img src="img/logo.avif"></a> </div>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <!--<button class="menu-btn2" onclick="openModal()">
+                <svg role="presentation" stroke-width="2" focusable="false" width="22" height="22" class="icon icon-hamburger" viewBox="0 0 22 22">
+                    <path d="M1 5h20M1 11h20M1 17h20" stroke="currentColor" stroke-linecap="round"></path>
+                </svg>
+            </button> -->
+            <!---<a href="carrinho.html"><button class="menu-btn3">
+                <svg role="presentation" stroke-width="2" focusable="false" width="22" height="22" class="icon icon-cart" viewBox="0 0 22 22">
+                    <path d="M9.182 18.454a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.818 0Zm7.272 0a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.819 0Z" fill="currentColor"></path>
+                    <path d="M5.336 6.636H21l-3.636 8.182H6.909L4.636 3H1m8.182 15.454a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.818 0Zm7.272 0a.91.91 0 1 1-1.818 0 .91.91 0 0 1 1.819 0Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                 </svg>
+            </button></a> -->
+        </nav>
+        <div class="top-bar">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <span>🔥 Ofertas com 50% OFF 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Promoções Exclusivas 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Vendas Limitadas por Pedido 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Site OficiaI Creamy 🔥</span>
+
+                   
+                    <span>🔥 Ofertas com 50% OFF 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Promoções Exclusivas 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Vendas Limitadas por Pedido 🔥</span>
+                    <span>•</span>
+                    <span>🔥 Site OficiaI Caramed 🔥</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+function startCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const clone = track.innerHTML;
+    track.innerHTML += clone;
+
+    let position = 0;
+    const speed = 3;
+
+    function move() {
+        position -= speed;
+        if (position <= -track.scrollWidth / 2) {
+            position = 0;
+        }
+        track.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(move);
+    }
+    function resetAnimation() {
+            void track.offsetWidth; // Força reflow para reiniciar a animação
+            track.style.animation = "scroll-mobile 15s linear infinite";
+        }
+
+    if (window.innerWidth > 480) {
+        move();
+    } else {
+        console.log("Modo mobile detectado, usando apenas CSS.");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', startCarousel);
+        </script>
+
+    </header>
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <div id="menuModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <ul>
+                <li><a href="#">Página Inicial</a></li>
+                <li><a href="#">Todos os Produtos</a></li>
+                <li><a href="#">Entrar em Contato</a></li>
+            </ul>
+            <div class="social-icons">
+                <i class="fab fa-facebook">
+                    <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-facebook" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.183 21.85v-8.868H7.2V9.526h2.983V6.982a4.17 4.17 0 0 1 4.44-4.572 22.33 22.33 0 0 1 2.667.144v3.084h-1.83a1.44 1.44 0 0 0-1.713 1.68v2.208h3.423l-.447 3.456h-2.97v8.868h-3.57Z" fill="currentColor"></path>
+                    </svg>
+                </i>
+                <i class="fab fa-instagram">
+                    <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-instagram" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.4c-2.607 0-2.934.011-3.958.058-1.022.046-1.72.209-2.33.446a4.705 4.705 0 0 0-1.7 1.107 4.706 4.706 0 0 0-1.108 1.7c-.237.611-.4 1.31-.446 2.331C2.41 9.066 2.4 9.392 2.4 12c0 2.607.011 2.934.058 3.958.046 1.022.209 1.72.446 2.33a4.706 4.706 0 0 0 1.107 1.7c.534.535 1.07.863 1.7 1.108.611.237 1.309.4 2.33.446 1.025.047 1.352.058 3.959.058s2.934-.011 3.958-.058c1.022-.046 1.72-.209 2.33-.446a4.706 4.706 0 0 0 1.7-1.107 4.706 4.706 0 0 0 1.108-1.7c.237-.611.4-1.31.446-2.33.047-1.025.058-1.352.058-3.959s-.011-2.934-.058-3.958c-.047-1.022-.209-1.72-.446-2.33a4.706 4.706 0 0 0-1.107-1.7 4.705 4.705 0 0 0-1.7-1.108c-.611-.237-1.31-.4-2.331-.446C14.934 2.41 14.608 2.4 12 2.4Zm0 1.73c2.563 0 2.867.01 3.88.056.935.042 1.443.199 1.782.33.448.174.768.382 1.104.718.336.336.544.656.718 1.104.131.338.287.847.33 1.783.046 1.012.056 1.316.056 3.879 0 2.563-.01 2.867-.056 3.88-.043.935-.199 1.444-.33 1.782a2.974 2.974 0 0 1-.719 1.104 2.974 2.974 0 0 1-1.103.718c-.339.131-.847.288-1.783.33-1.012.046-1.316.056-3.88.056-2.563 0-2.866-.01-3.878-.056-.936-.042-1.445-.199-1.783-.33a2.974 2.974 0 0 1-1.104-.718 2.974 2.974 0 0 1-.718-1.104c-.131-.338-.288-.847-.33-1.783-.047-1.012-.056-1.316-.056-3.879 0-2.563.01-2.867.056-3.88.042-.935.199-1.443.33-1.782.174-.448.382-.768.718-1.104a2.974 2.974 0 0 1 1.104-.718c.338-.131.847-.288 1.783-.33C9.133 4.14 9.437 4.13 12 4.13Zm0 11.07a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm0-8.13a4.93 4.93 0 1 0 0 9.86 4.93 4.93 0 0 0 0-9.86Zm6.276-.194a1.152 1.152 0 1 1-2.304 0 1.152 1.152 0 0 1 2.304 0Z" fill="currentColor"></path>
+                    </svg>
+                </i>
+                <i class="fab fa-whatsapp">
+                    <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-whatsapp" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.354 4.552a10.336 10.336 0 0 0-7.36-3.052C6.257 1.5 1.588 6.168 1.586 11.905a10.383 10.383 0 0 0 1.39 5.202L1.5 22.5l5.516-1.447c1.52.83 3.232 1.266 4.973 1.266h.004c5.736 0 10.404-4.668 10.406-10.405a10.342 10.342 0 0 0-3.045-7.362Zm-7.36 16.01h-.004a8.639 8.639 0 0 1-4.402-1.205l-.316-.188-3.274.859.874-3.192-.206-.327a8.626 8.626 0 0 1-1.322-4.603c.002-4.769 3.882-8.649 8.653-8.649a8.59 8.59 0 0 1 6.115 2.537 8.596 8.596 0 0 1 2.53 6.119c-.002 4.769-3.881 8.649-8.649 8.649Zm4.744-6.477c-.26-.13-1.539-.76-1.777-.846-.239-.087-.412-.13-.585.13s-.672.846-.823 1.02c-.152.173-.304.195-.564.064-.26-.13-1.097-.404-2.09-1.29-.773-.69-1.295-1.54-1.447-1.801-.152-.26-.016-.401.114-.53.116-.117.26-.304.39-.456.13-.152.173-.26.26-.434.087-.173.043-.325-.022-.455s-.584-1.41-.802-1.93c-.21-.508-.425-.439-.584-.447a10.498 10.498 0 0 0-.499-.01.955.955 0 0 0-.693.326c-.239.26-.91.89-.91 2.169 0 1.28.931 2.516 1.061 2.69.13.174 1.834 2.8 4.442 3.926.62.268 1.105.428 1.482.548.623.198 1.19.17 1.638.103.5-.074 1.538-.629 1.755-1.236.216-.607.216-1.128.151-1.236-.064-.109-.238-.174-.498-.304v-.001Z" fill="currentColor"></path>
+                    </svg>
+                </i>
+                <i class="fab fa-tiktok">
+                    <svg role="presentation" focusable="false" width="27" height="27" class="icon icon-tiktok" viewBox="0 0 24 24">
+                        <path d="M20.027 10.168a5.125 5.125 0 0 1-4.76-2.294v7.893a5.833 5.833 0 1 1-5.834-5.834c.122 0 .241.011.361.019v2.874c-.12-.014-.237-.036-.36-.036a2.977 2.977 0 0 0 0 5.954c1.644 0 3.096-1.295 3.096-2.94L12.56 2.4h2.75a5.122 5.122 0 0 0 4.72 4.573v3.195" fill="currentColor"></path>
+                    </svg>
+                </i>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    </header>
+    <div class="banner">
+        <div class="img-banner">
+            <img src="img-tumb/banner.webp" alt="" height="100%" width="100%">
+        </div>
+    </div>
+
+    <div class="main-prod">
+        <div class="div-h1s">
+            <h4>OFERTAS DA SEMANA!</h4>
+            <h1>Mais Vendidos</h1>
+            <h5>Oferta 50% OFF por tempo limitado!</h5>
+        </div>
+
+        <div class="container" id="card-items">
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=135"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem12.jpeg" alt="Conjunto Lábios">
+                <p class="title">Carmed Kit Completo (14 Unidades)</p>
+                <p class="price">R$ 129,50  <span class="old-price">R$ 259,00</span></p></a>
+                    <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOTB"><button class="add-button"
+                data-title="Conjunto Lábios Double Touch"
+                data-price="179,90"
+                >Comprar</button></a>
+
+            </div>
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=124">
+                <span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem01.webp" alt="Conjunto Puro Luxo Completo">
+                <p class="title">Carmed Ácido Hialurônico (10 Unidades)</p>
+                 <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p>
+             </a>
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT1"><button class="add-button"
+                data-title="Conjunto Puro Luxo Completo"
+                data-price="199,90"
+                >Comprar</button></a>
+
+            </div>
+            <div class="card"  id="card-items">
+                <a href="visualizacaoProduto.html?id=125">
+                <span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem02.webp" alt="Conjunto Perfumes">
+                <p class="title">Carmed Bff Beijinho Fps30 (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00 </span></p>
+                </a>
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOTA"><button class="add-button"
+                data-title="Conjunto Perfumes"
+                data-price="159,90"
+                >Comprar</button>
+            </div></a>
+
+
+            <div class="card" id="card-items">
+               <a href="visualizacaoProduto.html?id=126"> <span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem03.webp" alt="">
+                <p class="title">Carmed bff Rosa Glitte (10 Unidades)</p>
+                <p class="price">R$ 99,50 <span class="old-price">R$ 199,00</span></p>
+                </a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT9"><button class="add-button"
+                data-title="Conjunto Perfumes"
+                data-price="159,90"
+                >Comprar</button></a>
+            </div>
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=127"> <span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem04.webp" class="img-04">
+                <p class="title">Carmed Fini Bananas (10 Unidades)</p>
+                <p class="price">R$ 99,50 <span class="old-price">R$ 199,00</span></p></a>
+                </a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOSV">
+                    <button class="add-button"
+                    data-title="Conjunto Olhos 01"
+                    data-price="139,90"
+                    >Comprar</button>
+                 </a>
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=128"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem05.webp" alt="" class="img-04">
+                <p class="title">Carmed Fini Beijos (10 Unidades)</p>
+                <p class="price">R$ 99,50 <span class="old-price">R$ 199,00</span></p></a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOSW"><button class="add-button"
+                data-title="Conjunto Maquiagem 03"
+                data-price="119,90"
+                >Comprar</button></a>
+ 
+            </div>
+
+            
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=129"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem06.webp" alt="Conjunto Lábios" class="img-04">
+                <p class="title">Carmed Fini Dentaduras (10 Unidades)</p>
+                <p class="price">R$ 99,50 <span class="old-price">R$ 199,00</span></p></a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOSX"><button class="add-button"
+                data-title="Conjunto Maquiagem 02"
+                data-price="159,90"
+                >Comprar</button></a>
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=130"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem07.webp" alt="Conjunto Puro Luxo Completo">
+                <p class="title">Carmed Hidratante Labial Baunilha (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT2"><button class="add-button"
+                data-title="Conjunto Maquiagem 01"
+                data-price="269,90"
+                >Comprar</button></a>
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=131"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem08.webp" alt="Conjunto Perfumes">
+                <p class="title">Carmed Hidratante Labial Cereja (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT3"><button class="add-button"
+                data-title="Conjunto Manicure"
+                data-price="59,90"
+                >Comprar</button></a>
+
+            </div>
+
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=132"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem09.webp" alt="Conjunto Lábios">
+                <p class="title">Carmed Hidratante Labial Melancia (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+
+                 <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT4"><button class="add-button02"
+                data-title="Conjunto Lábios e Mãos Nu Moderno"
+                data-price="99,90"
+                >Comprar</button></a>   
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=133"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem10.webp" alt="Conjunto Puro Luxo Completo">
+                <p class="title">Carmed Hidratante Labial Menta (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT5"><button class="add-button02"
+                data-title="Conjunto Lábios e Mãos Exclusivo Vermelho"
+                data-price="99,90"
+                >Comprar</button></a>
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=134"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem11.webp" alt="Conjunto Perfumes">
+                <p class="title">Carmed Hidratante Labial Pêssego (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+                <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT6">   <button class="add-button02"
+                data-title="Conjunto Lábios e Mãos Borgonha Deluxe"
+                data-price="99,90"
+                >Comprar</button></a>
+
+            </div>
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=136"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem13.avif" alt="Conjunto Puro Luxo Completo" class="img-04">
+                <p class="title">Carmed Maçã do Amor (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+                    <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT0">   <button class="add-button"
+                data-title="Conjunto Esponjas"
+                data-price="59,90"
+                >Comprar</button></a>
+
+            </div>
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=137"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem14.webp" alt="Conjunto Perfumes">
+                <p class="title">Carmed Protetor Labial Água de Coco FPS 30 (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+
+                    <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT7"><button class="add-button"
+                data-title="Conjunto de Cuidados Labiais 02"
+                data-price="99,90"
+                >Comprar</button></a>
+
+            </div>
+
+            <div class="card" id="card-items">
+                <a href="visualizacaoProduto.html?id=138"><span class="discount">Economize 50%</span>
+                <img src="img-tumb/imagem15.webp" alt="Conjunto Lábios">
+                <p class="title">Carmed Protetor Labial FPS 30 (10 Unidades)</p>
+                <p class="price">R$ 99,50  <span class="old-price">R$ 199,00</span></p></a>
+                    <a href="https://checkout.oficialcarmed.com/VCCL1O8SBOT8"><button class="add-button"
+                data-title="Conjunto de Cuidados Labiais"
+                data-price="119,90"
+                >Comprar</button></a>
+
+            </div>
+
+        </div>
+        <div class="icons-items-tems">
+            <div class="minicard">
+                <svg role="presentation" fill="none" focusable="false" stroke-width="2" width="48" height="48" class="sm:hidden icon icon-picto-box" viewBox="0 0 24 24">
+                    <path d="M2.22 5.472a.742.742 0 0 0-.33.194.773.773 0 0 0-.175.48c-.47 4.515-.48 7.225 0 11.707a.792.792 0 0 0 .505.737l9.494 3.696.285.079.286-.08 9.494-3.694a.806.806 0 0 0 .505-.737c.5-4.537.506-7.153 0-11.648a.765.765 0 0 0-.175-.542.739.739 0 0 0-.33-.257v.002" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M22.269 5.997a.771.771 0 0 0-.16-.335.744.744 0 0 0-.33-.257l-9.494-3.629a.706.706 0 0 0-.571 0L6.967 3.623 2.22 5.47a.742.742 0 0 0-.33.192.771.771 0 0 0-.16.336.806.806 0 0 0 .49.592l9.494 3.696h.57l5.216-2.03L21.78 6.59a.794.794 0 0 0 .492-.593h-.002Z" fill="currentColor" fill-opacity="0"></path>
+                    <path d="m17.5 8.255-5.215 2.03h-.571L2.22 6.59a.806.806 0 0 1-.49-.592.771.771 0 0 1 .16-.336.742.742 0 0 1 .33-.192l4.747-1.847M17.5 8.255 21.78 6.59a.794.794 0 0 0 .492-.593h-.002a.771.771 0 0 0-.16-.335.744.744 0 0 0-.33-.257l-9.494-3.629a.706.706 0 0 0-.571 0L6.967 3.623M17.5 8.255 6.967 3.623M12 22.365v-12.08M15.5 17l4-1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div class="items-descri">
+                    <div class="descri1">
+                        <h4>Frete Grátis</h4>
+                        <p>Frete grátis para todo o Brasil.</p>
+                    </div>
+                </div>
+           </div>
+           <div class="minicard">
+                <svg role="presentation" fill="none" focusable="false" stroke-width="2" width="48" height="48" class="sm:hidden icon icon-picto-percent" viewBox="0 0 24 24">
+                    <path d="M12 22.714c6.857 0 10.714-3.857 10.714-10.714S18.857 1.286 12 1.286 1.286 5.143 1.286 12 5.143 22.714 12 22.714Z" fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="m7.714 16.286 8.571-8.572" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8.571 9.429a.857.857 0 1 0 0-1.715.857.857 0 0 0 0 1.715v0ZM15.428 16.286a.857.857 0 1 0 0-1.715.857.857 0 0 0 0 1.715Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div class="items-descri">
+                    <div class="descri1">
+                        <h4>Desconto via Pix</h4>
+                        <p>Ganhe 10% de desconto pagando com Pix.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="minicard">
+                <svg role="presentation" fill="none" focusable="false" stroke-width="2" width="48" height="48" class="sm:hidden icon icon-picto-credit-card" viewBox="0 0 24 24">
+                    <path d="M1.714 16.882c0 1.36 1.063 2.48 2.4 2.71 1.773.307 3.456.714 7.886.714s6.113-.407 7.886-.713c1.337-.232 2.4-1.351 2.4-2.709V6.708c0-1.183-.806-2.203-1.975-2.39A53.325 53.325 0 0 0 12 3.694c-4.43 0-6.114.407-7.887.713-1.337.232-2.4 1.351-2.4 2.709v9.766Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M22.286 9.588H1.714V7.02c0-1.305 1.02-2.378 2.306-2.597.235-.04.466-.08.703-.124 1.584-.288 3.351-.605 7.277-.605 3.69 0 6.617.352 8.39.638 1.12.182 1.896 1.162 1.896 2.297v2.959Z" fill="currentColor" fill-opacity="0" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M14.666 15.804h3.485" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <div class="items-descri">
+                    <div class="descri1">
+                        <h4>Parcelamento Fácil</h4>
+                        <p>Divida suas compras em até 3x sem juros.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="minicard">
+                <svg role="presentation" fill="none" focusable="false" stroke-width="2" width="48" height="48" class="sm:hidden icon icon-picto-lock" viewBox="0 0 24 24">
+                    <path d="M3.236 18.182a5.071 5.071 0 0 0 4.831 4.465 114.098 114.098 0 0 0 7.865-.001 5.07 5.07 0 0 0 4.831-4.464 23.03 23.03 0 0 0 .165-2.611c0-.881-.067-1.752-.165-2.61a5.07 5.07 0 0 0-4.83-4.465c-1.311-.046-2.622-.07-3.933-.069a109.9 109.9 0 0 0-3.933.069 5.07 5.07 0 0 0-4.83 4.466 23.158 23.158 0 0 0-.165 2.609c0 .883.067 1.754.164 2.61Z" fill="currentColor" fill-opacity="0" stroke="currentColor"></path>
+                    <path d="M17 8.43V6.285A5 5 0 0 0 7 6.286V8.43" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12 17.714a2.143 2.143 0 1 0 0-4.286 2.143 2.143 0 0 0 0 4.286Z" stroke="currentColor"></path>
+                </svg>
+                <div class="items-descri">
+                    <div class="descri1">
+                        <h4>Compra Segura</h4>
+                        <p>Seus dados protegidos com segurança de ponta a ponta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer01">
+                <img src="img/wellester.webp" alt="" class="footerft">
+            
+            </div>
+            <div class="footer02">
+                <h1>Newsletter</h1>
+                <p class="un">Cadastre-se agora para receber todas as novidades sobre os últimos produtos e promoções exclusivas!</p>
+
+                <div class="caixa-input">
+                    
+                        <input id="" class="input-is-floating" type="email" placeholder="e-mail">
+                        <button class="foter-btn">Enviar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer005">
+            <div class="footer-column">
+                <h4>Fórmulas pensadas especialmente para você</h4>
+<p>Oferecemos produtos de <strong>skincare facial</strong> desenvolvidos com <strong>fórmulas inteligentes e eficazes</strong>, para atender diferentes necessidades e tipos de pele.</p>
+<p>Esses produtos são pensados para garantir uma rotina de cuidados <strong>prática, eficaz e acessível</strong>, ajudando a manter a pele <strong>saudável, jovem e viçosa</strong>.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Atendimento e Suporte:</h4>
+                <p>De Segunda-feira à Sexta-feira das 08:00h às 17:00h.</p>
+                <p><strong>Email:</strong> contato@oficiaIcreamy.com</p>
+                <p><strong>Telefone:</strong> (11) 98820-1258</p>
+            </div>
+            <div class="footer-column">
+                <h4>Formas de pagamento</h4>
+                <p><strong>Cartão de crédito:</strong> Amex, Elo, Mastercard, Visa, HiperCard.</p>
+                <p>Boleto e Pix à vista.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Institucional</h4>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Política de Reembolso</a>
+                <a href="#">Política de Frete</a>
+                <a href="#">Termos de Serviço</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025, Oficial. &copy; Creamy, Inc. Todos os direitos reservados.
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="carrinho.js"></script>
+</body>
+</html>

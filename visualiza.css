@@ -1,0 +1,364 @@
+.visualizaBody {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: block; /* Alterando de flex para block */
+}
+
+.visualizaBody header {
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+.visualizaBody body {
+    padding-top: 100px;
+}
+
+.visualizaBody .icons-items-tems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 120px;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo caso necessário */
+    width: 100%; /* Garante que o bloco não ultrapasse os limites da tela */
+}
+
+.visualizaBody .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%; /* Ajusta para ocupar toda a largura da tela */
+    max-width: 1300px; /* Garante um limite máximo para evitar problemas */
+    margin: 50px auto 0 auto; /* Centraliza horizontalmente e adiciona um espaçamento superior */
+    flex-wrap: wrap; /* Evita que o conteúdo fique espremido */
+}
+
+.containerV {
+    display: flex;
+    background: #fff;
+    margin: 150px auto 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%; /* Garante que ocupe toda a largura possível sem ultrapassar o max-width */
+}
+
+.product-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnails img {
+    width: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+.stock-statusV {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Ajuste o espaço entre o ícone e o texto */
+    color: rgb(64, 206, 64);
+    margin-bottom: 20px;
+}
+
+.stock-status {
+    display: flex;
+    align-items: center;
+    color: rgb(64, 206, 64);
+    font-size: 16px; /* Ajuste o tamanho do texto se necessário */
+}
+
+.stock-status svg {
+    width: 18px;
+    height: 18px;
+    background-color:  rgb(64, 206, 64);
+}
+
+.product-nameV{
+    margin-bottom: 10px;
+    font-size: 8px;
+}
+
+.product-info {
+    flex: 1;
+    padding-left: 20px;
+    min-width: 300px;
+}
+
+.badge-div {
+    margin-bottom: 25px;
+}
+
+.badge {
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: grey;
+    margin-left: 10px;
+}
+
+.discount {
+    background: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.delivery-info {
+    background: #e9f1ea;
+    padding: 10px;
+    border-radius: 25px;
+    margin-top: 10px;
+    font-size: 12px;
+    width: 350px;
+    height: 90px;
+    color: rgb(64, 206, 64);
+}
+.pronta-entrega1{
+    display: flex;
+    align-items: center;
+    color: rgb(64, 206, 64);
+    font-size: 16px; /* Ajuste o tamanho do texto se necessário */
+    gap: 10px;
+    margin-top: 10px;
+}
+.pronta-entrega1 svg{
+    width: 18px;
+    height: 18px;
+}
+.quantity {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantity button {
+    background: lightgrey;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.btn-ajt {
+    padding-bottom: 22px;
+    margin-top: 25px;
+}
+
+.cart-button {
+    background: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-button:hover {
+    background: #333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .containerV {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 180px;
+        padding: 15px;
+    }
+    
+    .product-info {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    
+    .thumbnails img {
+        width: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+   
+    .visualizaBody .carousel-track {
+        display: flex;
+        gap: 50px;
+        white-space: nowrap;
+        will-change: transform;
+        animation: scroll-mobile 60s linear infinite;
+        min-width: 200%; /* Garante que o conteúdo ocupe o dobro do espaço */
+
+    }
+
+    @keyframes scroll-mobile {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-500%);
+        }
+    }
+    .containerV {
+        width: 90%;
+        padding: 10px;
+        margin-top: 40px;
+    }
+
+    .product-nameV{
+        margin-right: 100%;
+        width: 500px;
+        font-size: 12px;
+        display: flex;
+    }
+    .product-name{
+        text-align: left;
+    }
+    .priceV {
+        display: flex;
+        align-items: center; /* Alinha os itens verticalmente */
+        gap: 10px; /* Espaço entre os elementos */
+        flex-wrap: nowrap; /* Impede quebra de linha */
+    }
+    
+    .price {
+        display: flex;
+        align-items: center; /* Garante que os preços fiquem alinhados corretamente */
+        gap: 5px;
+        white-space: nowrap; /* Evita que os preços quebrem linha */
+    }
+    
+    .current-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #e63946;
+        display: flex;
+        align-items: center;
+        white-space: nowrap; /* Evita quebra de linha */
+    }
+    
+    .old-price {
+        font-size: 16px;
+        text-decoration: line-through;
+        color: #888;
+        display: flex;
+        align-items: center;
+        white-space: nowrap; /* Evita quebra de linha */
+    }
+    
+    .discount {
+        background-color: #e63946;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 2px 8px;
+        border-radius: 15px; /* Mantém o fundo arredondado */
+        display: flex;
+        align-items: center; /* Centraliza o texto verticalmente */
+        justify-content: center; /* Centraliza o texto horizontalmente */
+        min-width: 95px; /* Garante um tamanho mínimo */
+        text-align: center;
+        white-space: nowrap; /* Evita quebra de linha */
+
+            position: relative;
+            top: 5px; /* Move o elemento para baixo */
+
+        height: 24px; /* Mantém o mesmo tamanho dos textos */
+        line-height: 1;
+        margin: 0; /* Remove a margem superior que estava deslocando o elemento */
+    }
+    
+    .badge-div {
+        display: flex;
+        gap: 8px; /* Adiciona um espaço entre os elementos */
+    }
+    
+    .badge {
+        font-size: 10px;
+        background-color: #000000; /* Define um fundo para a badge */
+        color: white;
+        padding: 6px 12px; /* Dá um espaçamento interno para arredondar */
+        border-radius: 20px; /* Torna o elemento arredondado */
+        display: flex; /* Usa flexbox para alinhamento */
+        align-items: center; /* Centraliza o texto verticalmente */
+        justify-content: center; /* Centraliza o texto horizontalmente */
+        font-weight: bold;
+        height: 25px;
+        width: 110px;
+        text-align: center;
+    }
+    #main-image {
+        max-width: 100%;
+    }
+    
+    .thumbnails img {
+        width: 40px;
+    }
+    .delivery-subtext{
+        text-align: left;
+    }
+    .cart-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .product-description{
+        text-align: left;
+        font-size: 13px;
+    }
+}

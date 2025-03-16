@@ -1,0 +1,72 @@
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparência */
+    z-index: 999; /* Abaixo do modal */
+}
+
+/* Estilizando o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 300px; /* Largura do modal */
+    height: 90%;
+    background: white;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.modal-content ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de fechar */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* Ícones sociais */
+.social-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 220px;
+    font-size: 20px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}

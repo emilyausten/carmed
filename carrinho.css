@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.carrinho-page {
+  background: rgb(255, 255, 255);
+}
+
+main {
+  background: #fff;
+  padding: 0px 30px;
+}
+main .page-titulo {
+  font-size: 30px;
+  padding: 50px 0;
+  text-align: center;
+}
+main .content {
+  display: flex;
+}
+main .content section {
+  flex: 1;
+}
+main .content aside {
+  min-width: 250px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead tr {
+  border-bottom: 3px solid #c4c4c4;
+}
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+tbody tr {
+  border-bottom: 2px solid #c4c4c4;
+}
+tbody tr:last-child {
+  border: 0;
+}
+tbody tr td {
+  padding: 30px 0;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+.product img {
+  border-radius: 6px;
+}
+.product .info {
+  margin-left: 20px;
+}
+.product .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product .info .category {
+  color: #666;
+}
+
+.qty {
+  background: #eee;
+  display: inline-flex;
+  padding: 0px 0px;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 10px;
+  height: 30px;
+}
+.qty span {
+  margin: 0 10px;
+}
+.qty button {
+  cursor: pointer;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  height: 100%;
+}
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.remove:hover {
+  background: #ddd;
+}
+
+aside {
+  margin-left: 30px;
+}
+aside .box {
+  margin-bottom: 15px;
+  border: 0px solid;
+  background: #ddd;
+  color: #222;
+}
+aside .box .box-header {
+  background: #ddd;
+  padding: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+}
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+aside .box .box-footer {
+  padding: 20px;
+  background: #eee;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+aside > button {
+  color: white;
+  border: 0;
+  padding: 15px 0;
+  background: rgb(0, 0, 0);
+  display: block;
+  width: 100%;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+aside > button:hover {
+  background: rgb(37, 37, 37);
+}
+
+/*# sourceMappingURL=carrinho.css.map */
