@@ -195,14 +195,14 @@ document.addEventListener("DOMContentLoaded", function () {
             checkoutLink: "https://checkout.oficialcarmed.com/VCCL1O8SBOT6" // 🔹 Adicionado link de checkout
         },
         "135": {
-            nome: "Carmed Kit Completo (14 Unidades)",
+            nome: "Kit Carmed (14 Unidades)",
             preco: "129,90",
             precoAnt: "259,00",
             imagem: "img-tumb/imagem12.jpeg",
             descricao: `
                 <h1>Indicação</h1> <br>
             
-                O Kit Completo inclui 14 unidades de protetor labial, sendo uma de cada sabor, perfeito para hidratar e proteger os lábios contra o ressecamento provocado pelas condições climáticas. Sua fórmula proporciona maciez e conforto, sendo ideal para uso diário e fácil de levar para qualquer lugar. Indicado para toda a família, previne o ressecamento e mantém os lábios sempre hidratados.
+                O Kit inclui 14 unidades de protetor labial, sendo uma de cada sabor, perfeito para hidratar e proteger os lábios contra o ressecamento provocado pelas condições climáticas. Sua fórmula proporciona maciez e conforto, sendo ideal para uso diário e fácil de levar para qualquer lugar. Indicado para toda a família, previne o ressecamento e mantém os lábios sempre hidratados.
             `,
             thumbnails: ["img-tumb/imagem12.jpeg"],
             checkoutLink: "https://checkout.oficialcarmed.com/VCCL1O8SBOTB" // 🔹 Adicionado link de checkout
